@@ -1,0 +1,21 @@
+.a-btn {
+    background-color: rgb(20, 40, 192);
+    color: white;
+    /* border : 1px solid red; */
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 0px 10px 0px 30px;
+    padding : 20px 16px 20px 16px;
+    /* 트랜지션은 바뀌는 속도. opacity같이 투명도  조절. */
+    transition : opacity 3s ease-in;
+ 
+ }
+
+ /* 가상 클래스라 칭함 :hover  , :active */
+ .a-btn:hover {
+    opacity: 0.7;
+ }
+
+ .a-btn:active {
+    opacity: 0.1;
+ }

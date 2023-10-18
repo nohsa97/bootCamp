@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            float : left;
+            margin : 0px 30px 0px 0px;
+            font-size: 32px;
+            list-style: none;
+        }
+
+        /* li다음에 컨텐츠 추가. */
+        li::after {
+            content : ' l ';
+        }
+
+        /* 마지막 요소에 컨텐츠를 공백으로 제거 */
+        li:last-of-type::after {
+            content : "";
+        }
+
+        li:first-of-type::before {
+            content : "시작";
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
+</body>
+</html>

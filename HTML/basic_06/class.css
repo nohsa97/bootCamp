@@ -1,0 +1,36 @@
+
+.parent {
+    color: skyblue;
+}
+
+.parent :first-child{
+    color : red;
+}
+
+/* p의 자손 타입.  */
+.parent p:first-of-type {
+    color : pink
+}
+
+.container  {
+    background-color: aqua;
+    padding : 10px;
+    margin-bottom: 10px;
+}
+
+.container:hover{
+    background-color: brown;
+}
+
+.container-two>div {
+    background-color: coral;
+}
+
+/* 홀수번째 변환. 2n+1  */
+.container-two>div:nth-child(2n+1){
+    background-color: aqua;
+}
+
+.focus-input:focus {
+    background-color: greenyellow;
+}

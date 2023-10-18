@@ -1,0 +1,87 @@
+<!-- z인덱스가 높은 요소는 낮은 인덱스보다 앞에 나옴 static(기본)은 무조건 뒤에 나타남-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            opacity: 0.7;
+            font : 12px Arial;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        #normaldiv{
+            z-index: 8;
+            background-color: aqua;
+            height: 70px;
+            position: static;
+            border: 1px dashed black;
+            margin : 0px 50px 0px 50px;
+            text-align: center;
+        }
+        #reldiv1 {
+            z-index: 3;
+            background-color: rgb(10, 61, 61);
+            height: 100px;
+            position: relative;
+            top : 30px;
+            border: 1px dashed black;
+            margin : 0px 50px 0px 50px;
+            text-align: center;
+        }
+        #reldiv2 {
+            z-index: 2;
+            background-color: rgb(176, 224, 224);
+            height: 100px;
+            top : 15px;
+            position: relative;
+            border: 1px dashed black;
+            margin : 0px 50px 0px 50px;
+            text-align: center;
+        }
+
+        #absdiv1 {
+            z-index: 5;
+            background-color: rgba(252, 2, 2, 0.933);
+            height: 300px;
+            width: 100px;
+            position: absolute;
+            top : 10px;
+            border: 1px dashed black;
+            margin : 0px 50px 0px 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="absdiv1">
+        <br><span class="bold">DIV #1</span>
+        <br>postion : absolute;
+        <br>z-index : 5;
+    </div>
+    <div id="reldiv1">
+        <br><span class="bold">DIV #2</span>
+        <br>postion : rela;
+        <br>z-index : 3;
+    </div>
+    <div id="reldiv2">
+        <br><span class="bold">DIV #3</span>
+        <br>postion : rela;
+        <br>z-index : 2;
+    </div>
+    <div id="absdiv2">
+        <br><span class="bold">DIV #4</span>
+        <br>postion : absolute;
+        <br>z-index : 5;
+    </div>
+    <div id="normaldiv">
+        <br><span class="bold">DIV #5</span>
+        <br>postion : no;
+        <br>z-index : 8;
+    </div>
+
+</body>
+</html>

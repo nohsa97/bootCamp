@@ -1,0 +1,42 @@
+.container {
+   border : 5px solid black;
+   display: flex;
+  /* justify-content: center; */
+  width: 500px;
+  height: 800px;
+   /* flex-wrap: wrap; */
+}
+
+/* 각각 수저하기 */
+
+.flex-item {
+   color : black;
+   font-size: 2rem;
+   text-align: center;
+   padding: 1rem;
+}
+
+.item1 {
+   background-color: aqua;
+}
+
+.item2 {
+   background-color: greenyellow;
+   padding-top: 40px;
+   order : -1;
+}
+.item3 {
+   background-color: yellow;
+   padding-top: 90px;
+}
+
+.item4 {
+   background-color: rgb(191, 142, 64);
+}
+
+.item5 {
+   background-color: rgb(234, 38, 158);
+}
+.item6 {
+   background-color: rgb(163, 87, 211);
+}

@@ -1,0 +1,36 @@
+ .imga {
+    width: 500px;
+    /* height: 500px; */
+    /* object-fit: cover; */
+    position : relative;
+    /* transform: test; */
+    animation: test 5s linear 2s infinite alternate;
+
+ }
+
+ /* 애니메이션을 위한 css 정의 */
+ @keyframes test {
+    0% {background-color: aqua;
+    left: 0px;
+    top :0px;}
+
+    25% {
+        left : 150px;
+        top : 0px;
+    }
+
+    50% {
+        left : 150px;
+        top : 150px;
+    }
+
+    75% {
+        left : 0px;
+        top : 150px;
+    }
+    100% {
+        left : 0px;
+        top : 0px;
+    }
+    
+ }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container{
+            display: grid;
+            background-color: aquamarine;
+            grid-template-columns: auto auto auto;
+            margin-top: 30px;
+            padding : 10px;
+        }
+        /* 시작 부분 끝부분 표시. */
+        .item1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 그리드 영역. -->
+    <div style="display: grid; gap: 20px; grid-template-columns: 100px 100px;">
+        <div style="background-color: aqua;">x</div>
+        <div style="background-color: pink;">x</div>
+    </div>
+    
+    
+    <div style="margin-top: 30px; display: grid; grid-template-columns: 100px 100px 200px;">
+        <div style="background-color: aqua;">x1</div>
+        <div style="background-color: pink;">x2</div>
+        <div style="background-color: yellow;">x3</div>
+    </div>
+
+    <!-- 남은 부분 자동 채우기 fr -->
+    <div style="margin-top: 30px; display: grid; grid-template-columns: 100px 1fr 2fr;">
+        <div style="background-color: aqua;">x1</div>
+        <div style="background-color: pink;">x2</div>
+        <div style="background-color: yellow;">x3</div>
+    </div>
+
+    <div class="grid-container">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+        <div class="item7">7</div>
+        <div class="item8">8</div>
+
+    </div>
+
+</body>
+</html>

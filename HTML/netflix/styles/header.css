@@ -1,0 +1,25 @@
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    justify-content: space-between;
+    top: 20px;
+    left: 0;
+    z-index: 100;
+}
+
+ .header_img1 {
+    width : 70px;
+    height: 23px;
+ }
+
+ 
+ .header_img2 {
+    margin-right: 10px;
+ }
+
+ .header_img1:hover,
+ .header_img2:hover {
+   cursor: pointer;
+ }
