@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body * {
+            margin : 10px;
+
+            border : 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form onclick="alert(`form`)" >form
+        <div >div
+            <p onclick="alert('test'); event.stopPropagation();">p</p>
+        </div>
+    </form>
+
+    <!-- <script>
+        const form = document.querySelector('form');
+        const dv = document.querySelector('div');
+        const p = document.querySelector('p');
+
+        form.onclick = function(e) {
+            e.target.style.backgroundColor = "red";
+            // 이벤트의 타겟이 된것은 p 실제 이벤트가 시작된 타겟
+            // 할당된 요소는 this. event.currentTarget == 할당된 요소
+        }
+    </script> -->
+    
+</body>
+</html>

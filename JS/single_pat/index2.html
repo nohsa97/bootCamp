@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 중재자
+        class Participant {
+            constructor(name) {
+                this.name = name;
+                this.room = null;
+                this.msg = [];
+            }
+
+            send(msg, to) {
+                this.room.send(msg, this.to);
+            }
+
+            receive(msg, from) {
+                this.msg.push({msg,from});
+            }
+
+            showMsg() {
+                console.log(this.msg);
+            }
+        }
+
+        class chatRoom {
+            constructor() {
+                this.Participant = {};
+            }
+
+            enter(Participant) {
+                this.Participant[Participant.name] = Participant;
+            }
+
+            send(msg,Participant,to) {
+                this.Participant[to.name].receive(msg,Participant); 
+            }
+        }
+
+        const room1 = new chatRoom();
+
+        const user1 = new Participant('user1');
+        const user2 = new Participant('user2');
+        const user3 = new Participant('user3');
+
+        room1.enter(user1);
+        room1.enter(user2);
+        room1.enter(user3);
+
+    </script>
+    
+</body>
+</html>

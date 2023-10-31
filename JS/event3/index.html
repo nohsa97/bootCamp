@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="buttons">
+        <button class="btn">a</button>
+        <button class="btn">b</button>
+        <button class="btn">c</button>
+    </div>
+
+    <script>
+        const btns = document.querySelectorAll('.btn');
+
+        const btn1 = document.querySelector('.btn');
+
+        const btns2 = document.querySelector('#buttons');
+
+        
+        // btns.addEventListener('click', () => {alert('xx')});
+        btns2.addEventListener('click', () => {alert("xxx")});
+
+        const newBtn = document.createElement('button');
+        newBtn.setAttribute('class','btn');
+        newBtn.innerText = 'd';
+
+        btns2.appendChild(newBtn);
+
+
+        for(const btnx of btns) {
+            btnx.addEventListener('click', ()=> {
+                alert("no");
+            })
+        }
+
+
+        </script>
+</body>
+</html>

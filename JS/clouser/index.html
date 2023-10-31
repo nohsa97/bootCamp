@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function outer(outerV){
+            return function inner(innerV) {
+                console.log('out '+ outerV);
+                console.log('in '+ innerV);
+            }
+        }
+
+        const newFunc = outer('out');
+        newFunc('inz');
+    </script>
+</body>
+</html>

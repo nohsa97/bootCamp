@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github finder</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <a onclick="window.location.reload()" style="cursor: pointer;">GitHub Finder</a> 
+    </header>
+
+    <main>
+        <div class="search_box basic_margin">
+            <h1>Search GitHub Users</h1>
+            <p>Enter a username to fetch a user profile and repos</p>
+            <!-- <form action="#" method="get" name="good"> -->
+                <input type="text" onkeypress="enter()" class="input_user_name">
+            <!-- </form> -->
+
+        </div>
+
+        <div class="user_info_container basic_margin" style="display: none;">
+            <div class="user_info_img">
+                <img class="user_img" src="" alt="">
+                <button class="user_info_View">View Profile</button>
+            </div>
+
+            <div class="user_info_about">
+                <div class="user_info_btn_set">
+                    <button class="info_repos"></button>
+                    <button class="info_gists"></button>
+                    <button class="info_follower"></button>
+                    <button class="info_following"></button>
+                </div>
+                <div class="user_info">
+                    <div class="info_list comapny"></div>
+                    <div class="info_list html_url"></div>
+                    <div class="info_list location"></div>
+                    <div class="info_list created_at"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="user_glass_on box" style="display: none;">
+        </div>
+
+        <div class="repo_container" style="display: none;">
+            <h2 style="margin-left : 20px;">Latest Repos</h2>
+            <div class="latest_repo_list basic_margin"></div>
+        </div>
+
+
+    </main>
+
+    <footer class="footer">
+        GitHub Finder ⓒ
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

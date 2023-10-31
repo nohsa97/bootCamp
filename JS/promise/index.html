@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function fetchDt(){
+            return new Promise((resolve, reject) => {
+                const sc = true;
+                if (sc) {
+                    resolve('이득');
+                }
+                else {
+                    reject('손해');
+                }
+            })
+        }
+
+        fetchDt().then(function(reulst) {
+            console.log('서옥');
+        })
+        .catch(function(error) {
+            console.log('ㄴㄴ');
+        })
+    </script>
+</body>
+</html>

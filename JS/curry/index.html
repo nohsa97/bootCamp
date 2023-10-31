@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const make_food = (ingre1) => {
+            return (ingre2) =>  {
+                  return (ingre3) => `${ingre1} , ${ingre2}, ${ingre3}`
+                 } 
+            }
+
+            console.log(make_food('ham')('bur')('ger'));
+    </script>
+    
+</body>
+</html>

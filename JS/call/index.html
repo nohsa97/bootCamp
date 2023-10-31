@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    call 
+
+    <script>
+        // const fullname = function (city , where) {
+        //     console.log(this.firstname + ' ' + this.lastName + ' ' + city + where)
+        // }
+
+        // const person1 = {
+        //     firstname : 'ho',
+        //     lastName : 'bb'
+        // }
+        // // 윈도우 객체를 가르킴
+
+        // // fullname.call(person1);
+        // // 콜메소드 - 
+        // // fullname.call(person1, '서울', '집');
+
+        // fullname.apply(person1, ['서울','집']);
+        // 위 콜이랑 다르게 배열로 넣어줘야함
+
+        function func(lang){
+            if(lang === 'kor') {
+                console.log(`언어는 : ${this.korGreeting}`);
+            }
+            else {
+                console.log(`언어는 : ${this.engGreeting}`);
+            }
+        }
+
+        const greeting = {
+            korGreeting : '안녕',
+            engGreeting : "no"
+        }
+
+        const x = func.bind(greeting);
+        // 바인딩.
+        x('kor');
+
+    </script>
+</body>
+</html>

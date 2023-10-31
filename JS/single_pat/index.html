@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 하나의 생성자에서 하나의 인스턴스만 생성
+
+        let instance; 
+
+
+        class Counter {
+
+            constructor() {
+                if(instance) {
+                throw new Error('하나만 생성해라');
+                }
+                this.counter = 0;
+                instance = this;
+            }
+
+            
+            getCount() {
+                return this.counter;
+            }
+
+            increamnet () {
+                return this.counter++; 
+            }
+
+            decreamnet () {
+                return this.counter--; 
+            }
+        }
+
+        // 객체 생성 . 두번 째는 에러 발생
+
+        const singleCounterA = new Counter();
+        singleCounterA.increamnet();
+        singleCounterA.increamnet();
+        console.log(singleCounterA.getCount());
+    </script>
+    
+</body>
+</html>

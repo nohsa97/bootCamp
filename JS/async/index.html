@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       fetch('http://jsonplaceholder.typicode.com/todos/1')
+       .then(response1 => response1.json())
+       .then(json=> console.log(json))
+    //   fetch 자체가 resolve와 같음 
+    // 비동기 요청
+        
+    </script>
+</body>
+</html>
