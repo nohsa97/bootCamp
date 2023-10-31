@@ -1,25 +1,34 @@
+
 const user_info_container = document.querySelector('.user_info_container');
 const repo_container = document.querySelector('.repo_container');
 const repo_list_box = document.querySelector('.latest_repo_list');
 const glass_box = document.querySelector('.user_glass_on');
+const Wrong_access = document.createElement('h1');
+Wrong_access.innerHTML = 'Wrong UserName';
+Wrong_access.className = 'Wrong_access';
+
+let page = 1;
+let repo_items = 0;
 
 function enter() {
     if(window.event.keyCode == 13){
 
+
         const user_name = document.querySelector('.input_user_name').value;
         const git_user_url = `https://api.github.com/users/${user_name}`;
-        const git_repo_url = `https://api.github.com/users/${user_name}/repos`;
+        let git_repo_url = ``;
 
         let result = getData(git_user_url);
         result = result.then((user_info) => { 
             if(user_info.message === 'Not Found'){
+                document.querySelector('.main').append(Wrong_access);
                 document.querySelector('.user_glass_on').innerHTML = '';
-                repo_container.classList.remove('display_on');
-                document.querySelector('.user_info_container').classList.remove('display_on_block');
+                document.querySelector('.user_info_container').classList.remove('display_on');
+                repo_container.classList.remove('display_on_block');
                 repo_list_box.innerHTML = '';
                 return error;
             }
-            //잔디 
+            //잔디
             document.querySelector('.user_glass_on').innerHTML = '';
             let user_glass = `https://ghchart.rshah.org/${user_info.login}`;
             let user_glass_img = document.createElement('img');
@@ -41,25 +50,35 @@ function enter() {
 
             user_info_container.className += ' display_on';
             glass_box.className += ' display_on';
-            return user_info;
-        });
 
-        result = getData(git_repo_url).then((git_info) => {
-            if(git_info.message === 'Not Found'){
-                document.querySelector('.user_glass_on').innerHTML = '';
-                repo_container.classList.remove('display_on');
-                document.querySelector('.user_info_container').classList.remove('display_on_block');
-                repo_list_box.innerHTML = '';
-                return error;
-            }
-            // 레포 리스트 제거
+            repo_items = user_info.public_repos;
+
+            page += parseInt(repo_items / 30);
+
             if(repo_list_box.hasChildNodes()){
                 repo_list_box.innerHTML = '';
             }
-            repo_container.className += ' display_on_block';
-            for(var i = 0; i < git_info.length; i ++){
-                addRepoBox(git_info[i]);
+
+            for(var i = 1 ; i <= page; i++) {
+                git_repo_url = `https://api.github.com/users/${user_name}/repos?page=${i}`;
+                repo_result = getData(git_repo_url).then((git_info) => {
+                    if(git_info.message === 'Not Found'){
+                        document.querySelector('.user_glass_on').innerHTML = '';
+                        repo_container.classList.remove('display_on');
+                        document.querySelector('.user_info_container').classList.remove('display_on_block');
+                        repo_list_box.innerHTML = '';
+                        return error;
+                    }
+        
+                    repo_container.className += ' display_on_block';
+        
+                    for(j= 0; j < git_info.length; j ++){
+                        addRepoBox(git_info[j]);
+                    }
+        
+                });
             }
+
         });
 
         }
@@ -70,6 +89,7 @@ async function getData(url) {
     try {
         const response = await fetch(url);
         const json_response = await response.json();
+        console.log(json_response);
 
         return json_response;
     }

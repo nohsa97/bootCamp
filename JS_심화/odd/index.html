@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        function f1 (limit, list) {
+            for(var a of list) {
+                if(a%2) {
+                    console.log(a);
+                    if(--limit == 0) break;
+                }
+
+            }
+        }
+
+        f1(3,[1,2,3,4,5,6,7,8,9,10]);
+    </script>
 </body>
 </html>
